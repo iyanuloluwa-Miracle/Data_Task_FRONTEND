@@ -75,8 +75,7 @@ const Form = () => {
 
   if (!userId) {
     return (
-      <>
-       <form onSubmit={handleCreate}>
+      <form onSubmit={handleCreate}>
         <div className="col_container">
           <label htmlFor="name">Name</label>
           <input type="text" name="name" id="name" required />
@@ -113,9 +112,6 @@ const Form = () => {
         </div>
         <p>{message}</p>
       </form>
-      </>
-      
-     
     );
   } else {
     return (
