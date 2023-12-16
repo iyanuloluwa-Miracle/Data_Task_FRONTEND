@@ -1,0 +1,87 @@
+
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  
+}
+
+.col_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  text-align: start;
+  font-size: 16px;
+}
+
+input,
+select {
+  padding: 10px;
+  font-size: 16px;
+  outline: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+select {
+  height: 100%;
+}
+
+.checkbox_container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #0073CF;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #00008B;
+}
+
+.message {
+  color: red;
+  font-size: 14px;
+}
+
+/* Responsive Styles */
+
+@media only screen and (max-width: 600px) {
+  form {
+    padding: 20px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+  }
+
+  button {
+    width: auto;
+  }
+}
