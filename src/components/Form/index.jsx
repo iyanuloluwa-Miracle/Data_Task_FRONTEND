@@ -19,11 +19,15 @@ const Form = () => {
   const getStoredData = useCallback(async () => {
     const data = await getData(`users/${userId}`);
     console.log(data);
-    setSectors(data?.sectors);
-    setName(data?.name);
-    setAgreeToTerms(data?.agreeToTerms);
-  }, []);
-
+    if(data){
+      setSectors(data.sectors);
+      
+      
+      setName(data.name);
+      setAgreeToTerms(data.agreeToTerms);
+    }
+    }, []);
+  console.log(sectors)
   const handleCreate = async (e) => {
     e.preventDefault();
 
@@ -70,12 +74,13 @@ const Form = () => {
 
   useEffect(() => {
     getOptions();
-    getStoredData();
-  }, []);
+    if(userId) getStoredData();
+  }, [userId]);
 
   if (!userId) {
     return (
-      <form onSubmit={handleCreate}>
+      <>
+       <form onSubmit={handleCreate}>
         <div className="col_container">
           <label htmlFor="name">Name</label>
           <input type="text" name="name" id="name" required />
@@ -112,6 +117,9 @@ const Form = () => {
         </div>
         <p>{message}</p>
       </form>
+      </>
+      
+     
     );
   } else {
     return (
